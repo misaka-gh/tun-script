@@ -5,7 +5,7 @@
 ## 使用方法
 
 ```script
-wget -N https://github.com/Misaka-blog/tun-script/raw/master/tun.sh && bash tun.sh
+wget -N https://raw.githubusercontents.com/Misaka-blog/tun-script/master/tun.sh && bash tun.sh
 ```
 
 详细教程待更新！
