@@ -8,8 +8,6 @@
 wget -N https://raw.githubusercontents.com/Misaka-blog/tun-script/master/tun.sh && bash tun.sh
 ```
 
-详细教程待更新！
-
 ## 交流群
 
 [Telegram](https://t.me/misakanetcn)
