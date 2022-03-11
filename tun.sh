@@ -39,7 +39,7 @@ done
 lxcovz(){
     case "$(systemd-detect-virt)" in
         openvz|lxc) echo "" ;;
-        * ) red "不支持的VPS架构！" ;;
+        * ) red "不支持的VPS架构！" && exit 1 ;;
     esac
 }
 
