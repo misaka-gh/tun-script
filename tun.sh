@@ -59,6 +59,10 @@ openTUN(){
         mkdir net
         mknod net/tun c 10 200
         chmod 0666 net/tun
+        checkTUN
+        if [ $TUNStatus == 1 ]; then
+            green "LXC/OVZ VPS的TUN模块已启用成功！"
+        fi
         cat>/root/tun.sh<<-\EOF
 #!/bin/bash
 cd /dev
@@ -68,10 +72,6 @@ chmod 0666 net/tun
 EOF
         chmod +x /root/tun.sh
         grep -qE "^ *@reboot root bash /root/tun.sh >/dev/null 2>&1" /etc/crontab || echo "@reboot root bash /root/tun.sh >/dev/null 2>&1" >> /etc/crontab
-        checkTUN
-        if [ $TUNStatus == 1 ]; then
-            green "LXC/OVZ VPS的TUN模块已启用成功！"
-        fi
     fi
 }
 
