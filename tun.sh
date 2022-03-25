@@ -63,7 +63,7 @@ openTUN(){
         if [ $TUNStatus == 1 ]; then
             green "LXC/OVZ VPS的TUN模块已启用成功！"
         fi
-        cat >/root/tun.sh<<-\EOF
+        cat <<EOF > /root/tun.sh
 #!/bin/bash
 cd /dev
 mkdir net
