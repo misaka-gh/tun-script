@@ -2,6 +2,8 @@
 
 在OpenVZ机器上无需使用面板干预开启TUN模块
 
+已集成至：https://github.com/Misaka-blog/Misaka-WARP-Script
+
 ## 使用方法
 
 ```script
