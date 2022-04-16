@@ -62,6 +62,9 @@ openTUN(){
         checkTUN
         if [ $TUNStatus == 1 ]; then
             green "OpenVZ VPS的TUN模块已启用成功！"
+        else
+            red "尝试开启TUN模块失败，请到VPS控制面板处开启" 
+            exit 1
         fi
         cat <<EOF > /root/tun.sh
 #!/bin/bash
