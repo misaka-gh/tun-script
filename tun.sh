@@ -61,7 +61,7 @@ openTUN(){
         chmod 0666 net/tun
         checkTUN
         if [ $TUNStatus == 1 ]; then
-            green "LXC/OVZ VPS的TUN模块已启用成功！"
+            green "OpenVZ VPS的TUN模块已启用成功！"
         fi
         cat <<EOF > /root/tun.sh
 #!/bin/bash
