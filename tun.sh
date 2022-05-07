@@ -39,7 +39,7 @@ done
 lxcovz(){
     case "$(systemd-detect-virt)" in
         openvz) echo "" ;;
-        * ) red "不支持的VPS架构！" && exit 1 ;;
+        * ) red "脚本仅支持OpenVZ的VPS启用TUN模块！" && exit 1 ;;
     esac
 }
 
@@ -68,7 +68,9 @@ openTUN(){
         fi
         cat <<EOF > /root/tun.sh
 #!/bin/bash
-# OpenVZ TUN模块守护进程，以防重启失效
+# OpenVZ TUN模块守护进程，以防重启后TUN模块失效
+# Script: Misaka-blog/tun-script
+
 cd /dev
 mkdir net
 mknod net/tun c 10 200
