@@ -51,10 +51,10 @@ checkTUN(){
 
 openTUN(){
     checkTUN
-    if [ $TUNStatus == 1 ]; then
+    if [[ $TUNStatus == 1 ]]; then
         red "检测到目前VPS已经启用TUN模块，无需重复启用"
     fi
-    if [ $TUNStatus == 0 ]; then
+    if [[ $TUNStatus == 0 ]]; then
         yellow "检测到VPS架构为OpenVZ，正在尝试使用脚本启用TUN"
         cd /dev
         mkdir net
@@ -62,7 +62,7 @@ openTUN(){
         chmod 0666 net/tun
         sleep 2
         checkTUN
-        if [ $TUNStatus == 1 ]; then
+        if [[ $TUNStatus == 1 ]]; then
             green "OpenVZ VPS的TUN模块已启用成功！"
         else
             red "在OpenVZ VPS尝试开启TUN模块失败，请到VPS控制面板处开启" 
