@@ -81,7 +81,7 @@ mknod net/tun c 10 200
 chmod 0666 net/tun
 EOF
         chmod +x /usr/bin/tun.sh
-        grep -qE "^ *@reboot root bash /root/tun.sh >/dev/null 2>&1" /etc/crontab || echo "@reboot root bash /usr/bin/tun.sh >/dev/null 2>&1" >> /etc/crontab
+        grep -qE "^ *@reboot root bash /usr/bin/tun.sh >/dev/null 2>&1" /etc/crontab || echo "@reboot root bash /usr/bin/tun.sh >/dev/null 2>&1" >> /etc/crontab
     fi
 }
 
